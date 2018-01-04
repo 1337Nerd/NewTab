@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
   <head>
     <!-- document metadata -->
     <meta charset="UTF-8">
@@ -7,7 +10,74 @@
 
     <!-- style -->
     <link rel="icon" type="image/png" id="favicon" href="chrome://branding/content/icon32.png#">
-    <link rel="stylesheet" href="style.css">
+    <style>
+	
+	body {
+	  background-color: #14051a;
+	  color: #657b83;
+	  font-family: "Iosevka", monospace;
+	  font-size: 15px;
+	}
+
+	h3 {
+	  display: inline;
+	  padding-bottom: 5px;
+	  font-size: 1em;
+	}
+
+	a, a:visited {
+	  display: block;
+	  padding-top: 2px;
+	  color: #49bbfb;
+	  text-decoration: none;
+	}
+
+	a:hover { color: #cb1ed1; }
+
+	.blue     { color: #087DC0; }
+	.green    { color: #79e513; }
+	.orange   { color: #b3d5da; }
+	.pink	  { color: #847BE4; }
+
+	#container {
+	  position: absolute;
+	  top: 35%;
+	  left: 0;
+	  right: 0;
+	  margin: 0 auto;
+	  width: 700px;
+	}
+	
+	#searchbox {
+	  margin: 4px;
+	  padding: 8px;
+	  border: 5px solid #14051a;
+	  box-shadow: 1px 1px 10px 0px #000;
+	}
+
+	#links {
+	  display: -webkit-box;
+	}
+
+	.box {
+	  -moz-box-flex: 1;
+	  margin: 4px;
+	  padding: 8px;
+	  border: 5px solid #14051a;
+	  box-shadow: 1px 1px 10px 0px #000;
+	}
+
+	form {
+	  display: inline;
+	}
+
+	input 	{
+	  width: 64%;
+	  background: none;
+	  border: none;
+	  color: #0dcdcd;
+	}
+    </style>
   </head>
 
   <body>
@@ -17,7 +87,7 @@
         <!-- klaz@internet ~ $ search -->
 	      <h3 style="display: inline;"><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">find</span></h3>
 	      <form method="get" action="https://www.duckduckgo.com/">
-		      <input type="text" autofocus="autofocus" autocomplete="off" name="q" \>
+		      <input type="text" autofocus="autofocus" autocomplete="off" name="q">
 	      </form>
       </div> <!-- end searchbox -->
 
@@ -62,9 +132,6 @@
       </div> <!-- end links -->
 
     </div> <!-- end container -->
-
-    <!-- commands script -->
-    <script type="text/javascript" src="assets/search.js"></script>
 
   </body>
 
