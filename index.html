@@ -8,34 +8,44 @@
     <!-- site metadata -->
     <title>Launch</title>
 
+    <script type="text/javascript" src="jquery-2.js"></script>
+
     <!-- style -->
     <link rel="icon" type="image/png" id="favicon" href="chrome://branding/content/icon32.png#">
     <style>
 	
 	body {
-	  background-color: #e4e4e4;
+	  background-image: url("file:///home/josh/Pictures/Wed Jan 31 16:46:34 EST 2018.png");
+	  background-size: 100% auto;
+	  /* color3 */
 	  color: #C4A000;
 	  font-family: "Iosevka", monospace;
 	  font-size: 15px;
+	  opacity: 0.9;
 	}
 
 	h3 {
 	  display: inline;
-	  padding-bottom: 5px;
 	  font-size: 1em;
+	  /* background */
+	  background-color: #e4e4e4;
 	}
 
 	a, a:visited {
 	  display: block;
 	  padding-top: 2px;
+	  /* color12 */
 	  color: #729FCF;
+	  /* background */
+	  background-color: #e4e4e4;
 	  text-decoration: none;
 	}
 
+	/* color13 */
 	a:hover { color: #AD7FA8; }
-
 	.blue     { color: #087DC0; }
-	.green    { color: #06989A; }
+	.color6    { color: #06989A; }
+	/* foreground */
 	.orange   { color: #000000; }
 	.pink	  { color: #847BE4; }
 
@@ -47,14 +57,15 @@
 	  margin: 0 auto;
 	  width: 700px;
 	}
-	
-	#searchbox {
-	  margin: 4px;
-	  padding: 8px;
-	  border: 5px solid #e4e4e4;
-	  box-shadow: 1px 1px 10px 0px #000;
-	}
 
+	#time {
+	  font-weight: 200;
+	  font-size: 37px;
+	  color: #e4e4e4;
+	  text-align: center;
+	  padding: 82px 0px;
+	}
+	
 	#links {
 	  display: -webkit-box;
 	}
@@ -64,7 +75,8 @@
 	  margin: 4px;
 	  padding: 8px;
 	  border: 5px solid #e4e4e4;
-	  box-shadow: 1px 1px 10px 0px #000;
+	  background-color: #e4e4e4;
+	  border-radius: 10px;
 	}
 
 	form {
@@ -81,9 +93,28 @@
   </head>
 
   <body>
+<div id="time"><span id="header-time">15:49:14</span></div>
+<script type="text/javascript">
+            var dt = new Date();
+            minute = "" + dt.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+            second = "" + dt.getSeconds(); if (second.length == 1) { second = "0" + second; }
+            var time = dt.getHours() + ":" + minute + ":" + second;
+
+            $("#header-time").text(time);
+
+            setInterval(function(){
+                dt = new Date();
+                minute = "" + dt.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+                second = "" + dt.getSeconds(); if (second.length == 1) { second = "0" + second; }
+                time = dt.getHours() + ":" + minute + ":" + second;
+                console.log(time);
+                $("#header-time").text(time);
+
+            },1000);
+        </script>
     <div id="container">
 
-      <div id="searchbox">
+      <div class="box">
         <!-- klaz@internet ~ $ search -->
 	      <h3 style="display: inline;"><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">find</span></h3>
 	      <form method="get" action="https://www.duckduckgo.com/">
@@ -94,7 +125,7 @@
       <div id="links">
         <div class="box">
           <!-- ~ $ cd ~/general -->
-          <h3><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">ls</span> ~/<span class="green">magic</span></h3>
+          <h3><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">ls</span> ~/<span class="color6">magic</span></h3>
 	  <a href="http://www.mtgsalvation.com/forums/the-game/modern/tier-1-modern/219590-affinity?page=500">affinity</a>
 	  <a href="https://www.channelfireball.com/articles/">channelfireball</a>
 	  <a href="http://www.quietspeculation.com/author/robrobby/">daily stock</a>
@@ -108,7 +139,7 @@
 
         <div class="box">
           <!-- ~ $ cd ~/reddit -->
-          <h3><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">ls</span> ~/<span class="green">reddit</span></h3>
+          <h3><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">ls</span> ~/<span class="color6">reddit</span></h3>
 	  <a href="https://www.reddit.com/r/jokes">/r/jokes</a>
 	  <a href="https://www.reddit.com/r/absolutelynotme_irl">/r/absolutelynotme_irl</a>
 	  <a href="https://www.reddit.com/r/meirl/">/r/meirl</a>
@@ -121,7 +152,7 @@
 
         <div class="box">
           <!-- ~ $ cd ~/nerd -->
-          <h3><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">ls</span> ~/<span class="green">general</span></h3>
+          <h3><span class="blue"> ~ </span> <span class="pink">»</span> <span class="orange">ls</span> ~/<span class="color6">general</span></h3>
 	  <a href="https://twitter.com/">twitter</a>
 	  <a href="https://mail.google.com/mail/u/0/#inbox">personal email</a>
 	  <a href="https://mail.protonmail.com">encrypted email</a>
